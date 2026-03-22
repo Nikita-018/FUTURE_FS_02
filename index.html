@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin CRM | Nikita Shelke</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div id="login-screen" class="container">
+        <h2><i class="fas fa-lock"></i> Admin Secure Access</h2>
+        <input type="password" id="adminPass" placeholder="Enter Password (Nikita123)">
+        <button onclick="checkAccess()" class="btn">Login to Backend</button>
+    </div>
+
+    <div id="dashboard" class="container" style="display:none;">
+        <h1>Lead Management Dashboard</h1>
+        <div id="add-lead-form" style="margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+        <h3>Add New Lead</h3>
+        <input type="text" id="newName" placeholder="Name" style="width: 25%;">
+        <input type="email" id="newEmail" placeholder="Email" style="width: 25%;">
+        <button onclick="addLead()" class="btn">Add Lead</button>
+    </div>
+        <div class="stats">
+            <p>Total Leads stored in Database: <span id="count">0</span></p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="leadData"></tbody>
+        </table>
+
+        <button onclick="logout()" class="btn-alt">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
